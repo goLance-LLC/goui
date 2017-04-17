@@ -1,0 +1,29 @@
+.gl.menu
+
+  &.clean
+    align-items center
+    display flex
+    margin-bottom $indent
+
+    > .item
+      align-items center
+      border-bottom 2px solid $color-grey
+      color lighten($color-grey-darker, 10%)
+      display inline-flex
+      justify-content center
+      padding ($indent / 2) $indent
+      font-weight 700
+
+      &:hover
+      &:active
+        border-bottom-color $color-grey-darker
+        color $color-grey-darkest
+
+      &.active
+        border-bottom-color $color-primary
+        color $color-primary
+
+  &.fluid
+
+    > .item
+      flex-grow 1

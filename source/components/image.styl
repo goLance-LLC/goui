@@ -1,0 +1,32 @@
+.gl.image
+
+  img&.background
+  &.background > img
+    height 100%
+    left 0
+    object-fit cover
+    position absolute
+    top @left
+    width @height
+
+    &.contained
+      object-fit contain
+
+  img&.avatar
+  &.avatar > img
+    border-radius 50%
+    height 3em
+
+    &.large
+      height 5em
+
+    &.big
+      height 7em
+
+  img&.fluid
+  &.fluid > img
+    width 100%
+
+  img&.semitransparent
+  &.semitransparent > img
+    opacity .5

@@ -1,0 +1,36 @@
+.gl.field
+.gl.form .field
+
+  > input
+    background #fff
+    border 1px solid $color-grey-lighter
+    padding .8em 1em
+    transition border-color $transition-duration
+
+    +placeholder()
+      color $color-grey
+
+    &:focus
+      border-color $color-primary-lighter
+      outline none
+
+  &.fluid
+  /.gl.fluid.form .field
+
+    > input
+      width 100%
+
+  + *
+    margin-top ($indent / 2)
+
+  + .actions
+    margin-top $indent
+
+    + *
+      margin-top ($indent / 2)
+
+    &.fluid
+    /.gl.fluid.form .actions
+
+      > *
+        width 100%

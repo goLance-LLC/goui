@@ -1,0 +1,80 @@
+.gl.list
+  display flex
+  flex-direction column
+
+  > .title
+    font-size 1.1em
+    margin-bottom .5em
+    font-weight 700
+
+  > .item
+
+    + .item
+      padding-top .15em
+
+  &.inverted
+
+    > .title
+      color #fff
+
+    > .item
+      color #fff
+      color hsla(#fff, .5)
+
+      &:hover
+      &:active
+      &.active
+        color hsla(#fff, 1)
+
+  &.indented
+
+    > li
+
+      + li
+        margin-top $indent
+
+  &.fancy
+
+    > li
+      align-items center
+      display flex
+
+    ol&
+      list-style none
+      counter-reset list
+
+      > li
+        position relative
+
+        &::before
+          align-items center
+          border 2px solid #fff
+          border-radius 50%
+          content counter(list)
+          counter-increment list
+          display flex
+          flex-shrink 0
+          font-weight 700
+          height 2.5em
+          justify-content center
+          line-height @height
+          margin-right $indent
+          width @height
+
+  &.categories
+
+    > .item
+      align-items center
+      color #fff
+      display flex
+      padding $indent
+      text-transform uppercase
+
+      > .gl.icon
+        margin-right ($indent / 2)
+
+      &:hover
+        background hsla(#000, .1)
+
+
+

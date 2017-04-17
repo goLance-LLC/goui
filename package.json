@@ -1,0 +1,19 @@
+{
+  "name": "goui",
+  "version": "0.0.0",
+  "description": "A goLance UI library",
+  "main": "source/index.styl",
+  "repository": "https://github.com/goLance-LLC/goui",
+  "author": "golance",
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^6.0.0"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "build": "stylus --include-css -c source --out build/goui.css",
+    "prepublish": "npm run build"
+  }
+}

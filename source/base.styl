@@ -1,0 +1,49 @@
+html
+  box-sizing border-box
+  font-size 16px
+  line-height 1.5
+
+*
+*::before
+*::after
+  box-sizing inherit
+
+input
+select
+textarea
+  font-family $font-family
+
+[hidden]
+  display none !important
+
+body
+  align-items center
+  color $color-text
+  display flex
+  flex-direction column
+  font-family $font-family
+  justify-content center
+  min-height 100vh
+  min-width 320px
+  width 100%
+
+  @media(max-width 320px)
+    overflow-x hidden
+
+main
+  flex 1
+  width 100%
+
+a
+  color $color-primary
+  cursor pointer
+  text-decoration none
+  transition color .2s
+
+  &:hover
+  &:active
+  &.active
+    color $color-primary-darker
+
+ol
+  padding-left 1.5em

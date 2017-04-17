@@ -1,0 +1,59 @@
+.gl.divider
+  align-items center
+  display flex
+  font-weight 600
+  justify-content center
+  margin-bottom $indent
+  margin-top @margin-bottom
+  text-transform uppercase
+  width 100%
+
+  &::before
+  &::after
+    content ''
+    height 1px
+    background hsla($color-text, .6)
+    width 50%
+    margin-left $indent
+    margin-right @margin-left
+
+  &:empty
+
+    &::before
+    &::after
+      margin-left 0
+      margin-right @margin-left
+
+  &:not(:empty)
+
+    > *
+      flex-shrink 0
+
+  &.inverted
+
+    &::before
+    &::after
+      background hsla(#fff, .15)
+
+  &.primary
+
+    &::before
+    &::after
+      background $color-primary-lighter
+
+  &.light
+
+    &::before
+    &::after
+      background $color-pale
+
+  &.indented
+    margin-bottom $indent * 2
+    margin-top @margin-bottom
+
+    &[class*='very indented']
+      margin-bottom $indent * 4
+      margin-top @margin-bottom
+
+  &.hidden
+    opacity 0

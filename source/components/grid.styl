@@ -1,0 +1,132 @@
+$padding = ($indent / 2)
+
+.gl.row
+  display flex
+  flex-wrap wrap
+
+  > .column
+    display flex
+    flex-direction column
+    padding $padding
+    position relative
+
+    &[class*='middle aligned']
+      justify-content center
+
+    &[class*='center aligned']
+      align-items center
+
+    &.fitted
+      padding 0
+
+    &.padded
+      padding ($padding * 2)
+
+    &.fixed
+      min-height 400px
+
+    &[class*='very padded']
+      padding ($padding * 4)
+
+
+    &.blue
+      background $color-blue
+      color #fff
+
+      &[class*='light blue']
+        background $color-blue-lighter
+
+      &[class*='dark blue']
+        background $color-blue-darker
+
+    > .gl.background.image
+      position static
+
+  &[class*='middle aligned']
+    align-items center
+
+  &[class*='center aligned']
+    justify-content center
+
+  fullWidthDefinitions($width)
+
+    @media(min-width: $width)
+
+      &[class*='two column']
+
+        > .column:not(.wide)
+          flex-basis 50%
+
+      &[class*='three column']
+
+        > .column:not(.wide)
+          flex-basis calc(100% / 3)
+
+      &[class*='four column']
+
+        > .column:not(.wide)
+          flex-basis 25%
+
+      > .column
+
+        &[class*='two wide']
+          flex-basis 'calc(100% / 6 - %s)' % ($padding * 2)
+
+        &[class*='four wide']
+          flex-basis 'calc(100% / 3 - %s)' % ($padding * 2)
+
+        &[class*='five wide']
+          flex-basis 'calc(100% * 5 / 12 - %s)' % ($padding * 2)
+
+        &[class*='six wide']
+          flex-basis 'calc(50%)' % ($padding * 2)
+
+        &[class*='seven wide']
+          flex-basis 'calc(100% * 7 / 12 - %s)' % ($padding * 2)
+
+        &[class*='eight wide']
+          flex-basis 'calc(100% / 1.5 - %s)' % ($padding * 2)
+
+        &[class*='ten wide']
+          flex-basis 'calc(100% * 10 / 12 - %s)' % ($padding * 2)
+
+    @media(max-width: $width)
+
+      > .column
+        flex-basis 100%
+
+  $sizes = 'tiny' $media-tiny,
+           'small' $media-small,
+           'large' $media-large,
+           'big' $media-big
+
+  &:not(.sized)
+    fullWidthDefinitions($media-medium)
+
+  for $size in $sizes
+
+    &[class*=\'{$size[0] + ' sized'}\']
+      fullWidthDefinitions($size[1])
+
+  &.padded
+
+    > .column
+      padding ($padding * 2)
+
+  &[class*='very padded']
+
+    > .column
+      padding ($padding * 4)
+
+  &.fitted
+
+    > .column:not(.padded)
+      padding 0
+
+  &.fixed
+    flex-wrap nowrap
+
+  &.growing
+    flex-grow 1
+
+

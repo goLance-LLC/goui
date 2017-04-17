@@ -1,0 +1,14 @@
+.gl.media
+
+  $sizes = 'tiny' $media-tiny,
+           'small' $media-small,
+           'medium' $media-medium,
+           'large' $media-large,
+           'big' $media-big
+
+  for $size in $sizes
+
+    @media(max-width: $size[1])
+
+      &[class*=\'{$size[0] + ' invisible'}\']
+        display none

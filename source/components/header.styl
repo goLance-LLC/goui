@@ -1,0 +1,43 @@
+.gl.header
+  line-height 1.3
+  margin-bottom 0.25em
+  margin-top @margin-bottom
+
+  &.thin
+    font-weight 400
+
+  &.primary
+    color $color-primary
+
+  h1&
+    font-size 3em
+
+    &:not(:only-child)
+      margin-bottom 0
+
+  h2&
+    font-size 2em
+
+  h3&
+    font-size 1.5em
+
+  h4&
+    font-size 1.3em
+
+  &.indented
+
+    &:not([class*='top indented'])
+      margin-bottom $indent
+
+    &:not([class*='bottom indented'])
+      margin-top $indent
+
+  &.sub
+    @extends .gl.divider
+    font-size .9em
+    margin 0
+    max-width 500px
+    text-transform uppercase
+
+  &[class*='center aligned']
+    text-align center

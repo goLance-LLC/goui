@@ -1,0 +1,89 @@
+.gl.section
+  display flex
+  flex-direction column
+  position relative
+
+  &:not(.fitted)
+    padding-bottom ($indent * 2)
+    padding-top @padding-bottom
+
+  &:not(.head)
+    justify-content center
+
+  &[class*='center aligned']
+    align-items center
+    text-align center
+
+  &.head
+    min-height 90vh
+    padding-top $indent
+
+    > .container
+      // height 100%
+      // left 0
+      // padding-top 10px
+      // position absolute
+      // top 0
+      // width @height
+      justify-content flex-start
+      position static
+
+    .section
+      flex-grow 1
+
+      &[class*='home page']
+        justify-content flex-start
+        padding-top ($indent * 6)
+
+  &.fixed
+    min-height 480px
+
+  &.inverted
+    background $color-primary
+    color #fff
+
+  &.padded
+    padding-bottom ($indent * 4)
+    padding-top @padding-bottom
+
+  &.pale
+    background $color-pale
+
+  &.grey
+    background $color-grey-darkest
+    color #fff
+
+  /**
+   * Special.
+   */
+  &.footer
+    background $color-dark
+    color hsla(#fff, .5)
+    width 100%
+    font-size .8em
+    padding-bottom $indent
+    padding-top @padding-bottom
+
+    .gl.logo.icon
+
+      > svg
+        fill hsla(#fff, .2)
+
+  generateMosaicPattern($color)
+    $size = 90px
+    $light = 2%
+    background-color $color
+    background-image linear-gradient(45deg, lighten($color, $light) 25%, transparent 25%, transparent 75%, lighten($color, ($light * 2)) 75%, lighten($color, ($light * 2))),
+    linear-gradient(45deg, lighten($color, 3%) 25%, transparent 25%, transparent 75%, lighten($color, ($light * 2)) 75%, lighten($color, ($light * 2))),
+    linear-gradient(135deg, lighten($color, ($light * 3)) 25%, transparent 25%, transparent 75%, lighten($color, ($light * 4)) 75%, lighten($color, ($light * 4)))
+    background-size $size $size
+    background-position 0 0, ($size / 2) ($size / 2)
+
+  &.mosaic
+    color #fff
+
+    &.grey
+      generateMosaicPattern($color-grey-darkest)
+
+    &.blue
+      generateMosaicPattern($color-blue-darkest)

@@ -1,0 +1,132 @@
+.gl.button
+  background $color-grey-lighter
+  border-color transparent
+  border-radius 2px
+  border-style solid
+  border-width 2px
+  color $color-text
+  cursor pointer
+  display inline-block
+  font-family $font-family
+  font-size 1em
+  font-weight 700
+  line-height inherit
+  outline none
+  padding .6em 2em
+  text-decoration none
+  text-transform uppercase
+  transition background $transition-duration,
+             border-color $transition-duration,
+             color $transition-duration
+  white-space nowrap
+
+  &:focus
+  &:hover
+  &.active
+    background $color-grey
+
+  &[disabled]
+  &.loading
+    pointer-events none
+    opacity .7
+
+  /**
+   * Colors.
+   */
+  &.primary
+    background $color-primary
+    border-color $color-primary
+    color #fff
+
+    &:focus
+    &:hover
+    &.active
+      background $color-primary-darker
+      border-color $color-primary-darker
+
+  &.secondary
+    background hsla(#fff, .5)
+    border-color hsla($color-primary, .7)
+    color $color-primary
+
+    &:focus
+    &:hover
+    &.active
+      color #fff
+      background $color-primary
+      border-color $color-primary
+
+  &.inverted
+    background transparent
+    border-color #fff
+    color #fff
+
+    &:focus
+    &:hover
+    &.active
+      color $color-primary
+      background #fff
+
+  &.linkedin
+  &.google
+  &.facebook
+    color #fff
+    padding-top .5em
+    padding-bottom .5em
+    padding-left 1em
+    padding-right 1.5em
+    text-transform none
+
+    > .icon
+      margin-right .5em
+
+      > svg
+        fill #fff
+        height 2em
+        width @height
+
+  &.linkedin
+    background $color-linkedin
+    border-color @background
+
+    &:hover
+    &:active
+    &.active
+      background darken($color-linkedin, 15%)
+      border-color @background
+
+  &.google
+    background $color-google
+    border-color $color-google
+
+    &:hover
+    &:active
+    &.active
+      background darken($color-google, 15%)
+      border-color @background
+
+  &.facebook
+    background $color-facebook
+    border-color $color-facebook
+
+    &:hover
+    &:active
+    &.active
+      background darken($color-facebook, 15%)
+      border-color @background
+
+  /**
+   * Special.
+   */
+  &.icon
+    line-height 0
+    padding-bottom .3em
+    padding-top .3em
+
+    > .gl.icon
+      height 2em
+      vertical-align middle
+      width @height
+
+      &:not(:only-child)
+        margin-right .5em

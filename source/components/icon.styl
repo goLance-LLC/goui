@@ -1,0 +1,81 @@
+i.gl.icon
+  align-items center
+  display inline-flex
+  justify-content center
+
+  > svg
+    height 100%
+    width 100%
+
+  &:not(.custom)
+    height 3em
+    width 3em
+
+    &.large
+      height 4.5em
+      width 4.5em
+
+  &.custom
+    height 1em
+    width 1em
+
+    &.large
+      height 1.5em
+      width 1.5em
+
+    &.massive
+      height 15em
+      width 15em
+
+    &.logo
+      width 160px
+      height 45px
+
+      &.large
+        width 240px
+        height 67.5px
+
+  &.white
+
+    > svg
+      fill #fff
+
+  &.grey
+
+    > svg
+      fill $color-grey-darkest
+
+  &.blue
+
+    > svg
+      fill $color-primary
+
+  &.social
+    background hsla(#fff, .2)
+    border-radius 50%
+    padding .25em
+    transition background-color $transition-duration
+
+    > svg
+      height 2em
+      width 2em
+
+    &.linkedin
+
+      &:hover
+        background $color-linkedin
+
+    &.twitter
+
+      &:hover
+        background $color-twitter
+
+    &.facebook
+
+      &:hover
+        background $color-facebook
+
+    &.youtube
+
+      &:hover
+        background $color-youtube
