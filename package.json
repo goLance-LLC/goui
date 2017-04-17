@@ -10,10 +10,13 @@
     "normalize.css": "^6.0.0"
   },
   "devDependencies": {
+    "clean-css-cli": "^4.0.12",
     "stylus": "^0.54.5"
   },
   "scripts": {
-    "build": "stylus --include-css -c source --out build/goui.css",
+    "compile": "stylus --include-css source --out build/goui.css",
+    "minify": "cleancss -o build/goui.min.css build/goui.css",
+    "build": "npm run compile && npm run minify",
     "prepublish": "npm run build"
   }
 }
