@@ -2,7 +2,6 @@ $padding = ($indent / 2)
 
 .gl.row
   display flex
-  flex-wrap wrap
 
   > .column
     display flex
@@ -91,6 +90,7 @@ $padding = ($indent / 2)
           flex-basis 'calc(100% * 10 / 12 - %s)' % ($padding * 2)
 
     @media(max-width: $width)
+      flex-wrap wrap
 
       > .column
         flex-basis 100%
