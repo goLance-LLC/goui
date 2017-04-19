@@ -14,8 +14,8 @@
     "stylus": "^0.54.5"
   },
   "scripts": {
-    "compile": "stylus --include-css source --out build/goui.css",
-    "minify": "cleancss -o build/goui.min.css build/goui.css",
+    "compile": "stylus --include-css --sourcemap source --out build/goui.css",
+    "minify": "cleancss --source-map -o build/goui.min.css build/goui.css",
     "build": "npm run compile && npm run minify",
     "prepublish": "npm run build"
   }
