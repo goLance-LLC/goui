@@ -1,5 +1,9 @@
 .gl.image
 
+  img&
+  > img
+    color transparent
+
   img&.background
   &.background > img
     height 100%
@@ -30,3 +34,7 @@
   img&.semitransparent
   &.semitransparent > img
     opacity .5
+
+  img&.pale
+  &.pale > img
+    background $color-pale
