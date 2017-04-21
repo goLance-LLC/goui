@@ -1,3 +1,27 @@
+$card-indent = $indent / 2
+
 .gl.card
+.gl.cards > .card
+  background #fff
   display flex
   flex-direction column
+  margin $card-indent
+  padding $indent
+
+.gl.cards
+  display flex
+  flex-wrap wrap
+
+  > .card
+    flex-grow 1
+    flex-shrink 0
+
+  &.three
+
+    > .card
+      flex-basis 'calc(100% / 3 - (%s * 2))' % $card-indent
+
+    @media(max-width: $media-small)
+
+      > .card
+        flex-basis 100%
