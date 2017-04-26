@@ -5,7 +5,7 @@
     color transparent
 
   img&.background
-  &.background > img
+  &.background img
     height 100%
     left 0
     object-fit cover
@@ -17,24 +17,26 @@
       object-fit contain
 
   img&.avatar
-  &.avatar > img
+  &.avatar img
     border-radius 50%
     height 3em
 
-    &.large
-      height 5em
+  img&.large.avatar
+  &.large.avatar img
+    height 5em
 
-    &.big
-      height 7em
+  img&.big.avatar
+  &.big.avatar img
+    height 7em
 
   img&.fluid
-  &.fluid > img
+  &.fluid img
     width 100%
 
   img&.semitransparent
-  &.semitransparent > img
+  &.semitransparent img
     opacity .5
 
   img&.pale
-  &.pale > img
+  &.pale img
     background $color-pale
