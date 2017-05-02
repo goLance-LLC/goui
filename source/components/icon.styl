@@ -7,7 +7,7 @@ i.gl.icon
     height 100%
     width 100%
 
-  &:not(.custom)
+  &:not(.custom):not(.font)
     height 3em
     width 3em
 
@@ -46,13 +46,19 @@ i.gl.icon
 
   &.grey
 
+    &.font
+      color $color-grey-darkest
+
     > svg
       fill $color-grey-darkest
 
   &.blue
 
+    &.font
+      color $color-blue
+
     > svg
-      fill $color-primary
+      fill $color-blue
 
   &.social
     background hsla(#fff, .2)
