@@ -12,3 +12,8 @@
 
       &[class*=\'{$size[0] + ' invisible'}\']
         display none
+
+    @media(min-width: $size[1] + 1px)
+
+      &[class*=\'{$size[0] + ' visible'}\']
+        display none
