@@ -4,8 +4,13 @@
   > input
     background #fff
     border 1px solid $color-grey-lighter
+    border-radius 0
+    box-shadow none
     padding .8em 1em
     transition border-color $transition-duration
+
+    &:not([type='checkbox']):not([type='radio'])
+      -webkit-appearance none
 
     +placeholder()
       color $color-grey
