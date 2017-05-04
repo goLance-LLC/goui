@@ -15,18 +15,20 @@ $padding = ($indent / 2)
     &[class*='center aligned']
       align-items center
 
+    &.fixed
+      min-height 400px
+
     &.fitted
       padding 0
 
     &.padded
       padding ($padding * 2)
 
-    &.fixed
-      min-height 400px
-
     &[class*='very padded']
       padding ($padding * 4)
 
+    &.fluid
+      flex-grow 1
 
     &.blue
       background $color-blue
@@ -125,6 +127,9 @@ $padding = ($indent / 2)
 
   &.fixed
     flex-wrap nowrap
+
+  &.loose
+    flex-wrap wrap
 
   &.growing
     flex-grow 1
