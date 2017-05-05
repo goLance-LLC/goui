@@ -13,14 +13,14 @@
     &:not(.vertical)
       flex-direction row
 
-      &:not(.wrap)
+      &:not(.wrap):not(.fitted)
 
         > *
 
           + *
             margin-left ($indent / 2)
 
-      &.wrap
+      &.wrap:not(.fitted)
         flex-wrap wrap
 
         > *
