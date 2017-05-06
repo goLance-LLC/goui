@@ -8,6 +8,7 @@ $padding = ($indent / 2)
     flex-direction column
     padding $padding
     position relative
+    overflow hidden
 
     &[class*='middle aligned']
       justify-content center
@@ -72,30 +73,47 @@ $padding = ($indent / 2)
 
         &[class*='two wide']
           flex-basis 'calc(100% / 6 - %s)' % ($padding * 2)
+          width @flex-basis
 
         &[class*='four wide']
           flex-basis 'calc(100% / 3 - %s)' % ($padding * 2)
+          width @flex-basis
 
         &[class*='five wide']
           flex-basis 'calc(100% * 5 / 12 - %s)' % ($padding * 2)
+          width @flex-basis
 
         &[class*='six wide']
           flex-basis 'calc(50%)' % ($padding * 2)
+          width @flex-basis
 
         &[class*='seven wide']
           flex-basis 'calc(100% * 7 / 12 - %s)' % ($padding * 2)
+          width @flex-basis
 
         &[class*='eight wide']
           flex-basis 'calc(100% / 1.5 - %s)' % ($padding * 2)
+          width @flex-basis
 
         &[class*='ten wide']
           flex-basis 'calc(100% * 10 / 12 - %s)' % ($padding * 2)
+          width @flex-basis
 
     @media(max-width: $width)
       flex-wrap wrap
 
       > .column
         flex-basis 100%
+        width 100%
+
+      &.double
+
+        > .column
+          flex-basis 50%
+          width 50%
+
+      &.reversed
+        flex-direction column-reverse
 
   $sizes = 'tiny' $media-tiny,
            'small' $media-small,
@@ -112,12 +130,12 @@ $padding = ($indent / 2)
 
   &.padded
 
-    > .column
+    > .column:not(.padded):not([class*='very padded'])
       padding ($padding * 2)
 
   &[class*='very padded']
 
-    > .column
+    > .column:not(.padded):not([class*='very padded'])
       padding ($padding * 4)
 
   &.fitted

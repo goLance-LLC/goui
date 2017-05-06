@@ -161,3 +161,17 @@
       border-color #fff transparent transparent
       box-shadow 0 0 0 1px transparent
 
+  &.short
+    padding-left $indent
+    padding-right @padding-left
+
+    &:not(.icon)
+      padding-bottom .3em
+      padding-top @padding-bottom
+
+    &.icon
+      padding-bottom 0
+      padding-top @padding-bottom
+
+  &.small
+    font-size .8em
