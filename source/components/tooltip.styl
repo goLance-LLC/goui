@@ -1,0 +1,72 @@
+[data-tooltip]
+  $size = .5rem
+  position relative
+  display block
+
+  &::before
+  &::after
+    background #fff
+    position absolute
+    transition transform .1s
+    z-index 1
+
+  &::before
+    content ''
+    height $size
+    transform scale(0) rotate(45deg)
+    width $size
+    transform-origin center center
+
+  &::after
+    border-radius 3px
+    color $color-text
+    content attr(data-tooltip)
+    display block
+    max-width none
+    padding ($indent / 2) $indent
+    white-space nowrap
+
+  &:hover
+
+    &::before
+      transform scale(1) rotate(45deg)
+
+  &:not([data-tooltip-position])
+
+    &::before
+      bottom 'calc(100% + %s)' % ($size / 2)
+      left 'calc(50% - %s)' % ($size / 2)
+      right auto
+      top auto
+
+    &::after
+      bottom 100%
+      left 50%
+      margin-bottom $size
+      transform scale(0) translateX(-50%)
+      transform-origin left bottom
+
+    &:hover
+
+      &::after
+        transform scale(1) translateX(-50%)
+
+  &[data-tooltip-position='bottom']
+
+    &::before
+      bottom auto
+      left 'calc(50% - %s)' % ($size / 2)
+      right auto
+      top 'calc(100% + %s)' % ($size / 2)
+
+    &::after
+      left 50%
+      margin-top $size
+      top 100%
+      transform scale(0) translateX(-50%)
+      transform-origin left top
+
+    &:hover
+
+      &::after
+        transform scale(1) translateX(-50%)

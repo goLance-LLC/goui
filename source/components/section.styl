@@ -41,15 +41,21 @@
   &.footer
     background $color-dark
     color hsla(#fff, .5)
-    width 100%
     font-size .8em
     padding-bottom $indent
     padding-top @padding-bottom
+    width 100%
+
+    > .container
+      overflow-x visible
 
     .gl.logo.icon
 
       > svg
         fill hsla(#fff, .2)
+
+    .column
+      overflow visible
 
   generateMosaicPattern($color)
     $size = 90px
