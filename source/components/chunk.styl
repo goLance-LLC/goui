@@ -32,6 +32,15 @@
         &.around
           justify-content space-around
 
+  &.inline:not(.block)
+    display inline
+
+  &.block:not(.inline)
+    display block
+
+  &[class*='inline block']
+    display inline-block
+
   &.indented
 
     indents($indent-size)
@@ -114,3 +123,6 @@
     border-bottom 1px solid hsla(#000, .1)
     margin-bottom ($indent / 4)
     padding-bottom @margin-bottom
+
+  &.fluid
+    width 100%
