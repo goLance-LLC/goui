@@ -1,0 +1,21 @@
+.gl.label
+  align-items center
+  background $color-grey-lightest
+  border-radius 3px
+  display inline-flex
+  font-size .8rem
+  font-weight 700
+  justify-content center
+  padding ($indent / 2) ($indent * .75)
+
+  &:not(:only-child)
+    margin-bottom ($indent / 2)
+
+    &:not(:last-child)
+      margin-right ($indent / 2)
+
+  &.small
+    font-size .65em
+
+  &.tiny
+    font-size .5em
