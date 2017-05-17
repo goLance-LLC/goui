@@ -34,7 +34,7 @@
         &.around
           justify-content space-around
 
-  &.inline:not(.block)
+  &.inline:not(.block):not(.flexy)
     display inline
 
   &.block:not(.inline)
@@ -42,6 +42,9 @@
 
   &[class*='inline block']
     display inline-block
+
+  &[class*='inline flexy']
+    display inline-flex
 
   &.indented
 

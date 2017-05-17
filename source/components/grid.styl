@@ -16,6 +16,12 @@ $padding = ($indent / 2)
     &[class*='center aligned']
       align-items center
 
+    &[class*='left aligned']
+      align-items flex-start
+
+    &[class*='right aligned']
+      align-items flex-end
+
     &.fixed
       min-height 400px
 
@@ -46,6 +52,9 @@ $padding = ($indent / 2)
 
   &[class*='center aligned']
     justify-content center
+
+  &[class*='right aligned']
+    justify-content right
 
   fullWidthDefinitions($width)
 
@@ -98,6 +107,11 @@ $padding = ($indent / 2)
 
     @media(max-width: $width)
       flex-wrap wrap
+
+      &.centered
+
+        > .column
+          align-items center
 
       > .column
         flex-basis 100%
