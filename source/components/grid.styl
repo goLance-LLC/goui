@@ -58,7 +58,7 @@ $padding = ($indent / 2)
 
   fullWidthDefinitions($width)
 
-    @media(min-width: $width)
+    @media not all and (max-width: $width)
 
       &[class*='two column']
 
@@ -105,7 +105,7 @@ $padding = ($indent / 2)
           flex-basis 'calc(100% * 10 / 12 - %s)' % ($padding * 2)
           width @flex-basis
 
-    @media(max-width: $width)
+    @media (max-width: $width)
       flex-wrap wrap
 
       &.centered
@@ -114,7 +114,7 @@ $padding = ($indent / 2)
           align-items center
 
       > .column
-        flex-basis 100%
+        flex-basis auto
         width 100%
 
       &.double
