@@ -29,10 +29,34 @@ $padding = ($indent / 2)
       padding 0
 
     &.padded
-      padding ($padding * 2)
+      $padding = ($padding * 2)
+
+      &:not(.horizontally)
+        padding-bottom $padding
+        padding-top @padding-bottom
+
+      &:not(.vertically)
+        padding-left $padding
+        padding-right @padding-left
 
     &[class*='very padded']
-      padding ($padding * 4)
+      $padding = ($padding * 4)
+
+      &:not(.horizontally)
+        padding-bottom $padding
+        padding-top @padding-bottom
+
+      &:not(.vertically)
+        padding-left $padding
+        padding-right @padding-left
+
+    &.spaced
+
+      &.around
+        justify-content space-around
+
+      &.between
+        justify-content space-between
 
     &.fluid
       flex-grow 1
@@ -151,8 +175,17 @@ $padding = ($indent / 2)
 
   &.fitted
 
-    > .column:not(.padded)
-      padding 0
+    > .column
+
+      &.padded
+
+        &:not(.vertically)
+          padding-bottom 0
+          padding-top 0
+
+        &:not(.horizontally)
+          padding-left 0
+          padding-right 0
 
   &.fixed
     flex-wrap nowrap
