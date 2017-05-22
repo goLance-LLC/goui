@@ -177,15 +177,13 @@ $padding = ($indent / 2)
 
     > .column
 
-      &.padded
+      &.horizontally
+        padding-bottom 0
+        padding-top 0
 
-        &:not(.vertically)
-          padding-bottom 0
-          padding-top 0
-
-        &:not(.horizontally)
-          padding-left 0
-          padding-right 0
+      &.vertically
+        padding-left 0
+        padding-right 0
 
   &.fixed
     flex-wrap nowrap
