@@ -2,6 +2,8 @@ $padding = ($indent / 2)
 
 .gl.row
   display flex
+  flex-wrap wrap
+  width 100%
 
   > .column
     display flex
@@ -78,7 +80,60 @@ $padding = ($indent / 2)
     justify-content center
 
   &[class*='right aligned']
-    justify-content right
+    justify-content flex-end
+
+  setColumns($padding)
+
+    > .column
+
+      &[class*='one wide']
+        flex-basis 'calc(100% / 12 - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='two wide']
+        flex-basis 'calc(100% / 6 - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='three wide']
+        flex-basis 'calc(25% - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='four wide']
+        flex-basis 'calc(100% / 3 - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='five wide']
+        flex-basis 'calc(100% * 5 / 12 - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='six wide']
+        flex-basis 'calc(50% - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='seven wide']
+        flex-basis 'calc(100% * 7 / 12 - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='eight wide']
+        flex-basis 'calc(100% * 8 / 12 - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='nine wide']
+        flex-basis 'calc(100% * 9 / 12 - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='ten wide']
+        flex-basis 'calc(100% * 10 / 12 - %s)' % ($padding * 2)
+        width @flex-basis
+
+      &[class*='eleven wide']
+        flex-basis 'calc(100% * 11 / 12 - %s)' % ($padding * 2)
+        width @flex-basis
+
+    &[class*='twelve wide']
+    &[class*='full wide']
+      flex-basis 'calc(100% - %s)' % ($padding * 2)
+      width @flex-basis
 
   fullWidthDefinitions($width)
 
@@ -88,49 +143,31 @@ $padding = ($indent / 2)
 
         > .column:not(.wide)
           flex-basis 50%
+          width @flex-basis
 
       &[class*='three column']
 
         > .column:not(.wide)
           flex-basis calc(100% / 3)
+          width @flex-basis
 
       &[class*='four column']
 
         > .column:not(.wide)
           flex-basis 25%
-
-      > .column
-
-        &[class*='two wide']
-          flex-basis 'calc(100% / 6 - %s)' % ($padding * 2)
           width @flex-basis
 
-        &[class*='four wide']
-          flex-basis 'calc(100% / 3 - %s)' % ($padding * 2)
-          width @flex-basis
 
-        &[class*='five wide']
-          flex-basis 'calc(100% * 5 / 12 - %s)' % ($padding * 2)
-          width @flex-basis
+      &:not(.fitted)
+        setColumns($padding)
 
-        &[class*='six wide']
-          flex-basis 'calc(50%)' % ($padding * 2)
-          width @flex-basis
-
-        &[class*='seven wide']
-          flex-basis 'calc(100% * 7 / 12 - %s)' % ($padding * 2)
-          width @flex-basis
-
-        &[class*='eight wide']
-          flex-basis 'calc(100% / 1.5 - %s)' % ($padding * 2)
-          width @flex-basis
-
-        &[class*='ten wide']
-          flex-basis 'calc(100% * 10 / 12 - %s)' % ($padding * 2)
-          width @flex-basis
+      &.fitted
+        setColumns(0px)
 
     @media (max-width: $width)
-      flex-wrap wrap
+      &
+      &.fixed
+        flex-wrap wrap
 
       &.centered
 
@@ -177,13 +214,15 @@ $padding = ($indent / 2)
 
     > .column
 
-      &.horizontally
-        padding-bottom 0
-        padding-top 0
-
-      &.vertically
+      &:not(.padded)
+      &.vertically.padded
         padding-left 0
         padding-right 0
+
+      &:not(.padded)
+      &.horizontally.padded
+        padding-bottom 0
+        padding-top 0
 
   &.fixed
     flex-wrap nowrap
