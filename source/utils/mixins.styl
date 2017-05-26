@@ -21,3 +21,41 @@ placeholder()
 
   &:-ms-input-placeholder
     {block}
+
+range-input()
+  appearance none
+  -webkit-tap-highlight-color rgba(255, 255, 255, 0)
+  outline none
+  {block}
+
+  &::-ms-fill-lower
+  &::-ms-fill-upper
+    background transparent
+
+  &::-ms-tooltip
+    display none
+
+range-input-track()
+
+  &::-moz-range-track
+    {block}
+
+  &::-ms-track
+    {block}
+
+  &::-webkit-slider-runnable-track
+    {block}
+
+range-input-thumb()
+
+  &::-webkit-slider-thumb
+    -webkit-appearance none
+    {block}
+
+  &::-moz-range-thumb
+    -moz-appearance none
+    {block}
+
+  &::-ms-thumb
+    -ms-appearance none
+    {block}

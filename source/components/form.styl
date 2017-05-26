@@ -1,15 +1,14 @@
 .gl.field
 .gl.form .field
   $background = #fff
-  $border = 1px solid $color-grey-lighter
 
   > input
     background $background
-    border $border
+    border none
     border-radius 0
-    box-shadow none
+    box-shadow inset -1px -1px $color-border, inset 1px 1px $color-border
     padding .8em 1em
-    transition border-color $transition-duration
+    transition box-shadow $transition-duration
 
     &:not([type='checkbox']):not([type='radio'])
       -webkit-appearance none
@@ -42,7 +41,36 @@
       margin-right @margin-left
 
     > input
-      border none
+      box-shadow none
+
+  &.short
+
+    > input
+      max-width 4em
+      width 100%
+
+  &.medium
+
+    > input
+      max-width 7em
+      width 100%
+
+  &.clean
+
+    > input
+      background transparent
+      box-shadow inset 0 -1px $color-grey-lighter
+      padding .6em .8em
+
+    &.iconed
+      background transparent
+      box-shadow inset 0 -1px $color-grey-lighter
+
+      > input
+        box-shadow none
+
+  &.large
+    font-size 1.2em
 
 .gl.form .field
 

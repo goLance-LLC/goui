@@ -10,6 +10,9 @@
     &[class*='middle aligned']
       align-items center
 
+    &[class*='bottom aligned']
+      align-items flex-end
+
     &[class*='right aligned']
       justify-content flex-end
 
@@ -28,7 +31,7 @@
 
       &:not(.fitted)
 
-        > *
+        > *:not(.indented)
           margin ($indent / 2)
 
       &.spaced
@@ -80,8 +83,11 @@
   &.big
     font-size 2em
 
+  &.semibold
+    font-weight 600
+
   &.bold
-    font-weight 700
+    font-weight bold
 
   &.italic
     font-style italic
