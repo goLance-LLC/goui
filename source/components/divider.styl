@@ -88,5 +88,15 @@
     margin-bottom ($indent / 2)
     margin-top @margin-bottom
 
+  &.fitted
+    margin-bottom 0
+    margin-top @margin-bottom
+
   &.hidden
     opacity 0
+
+  &.light
+
+    &::before
+    &::after
+      background $color-grey-lighter

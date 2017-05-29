@@ -13,9 +13,6 @@
     &[class*='bottom aligned']
       align-items flex-end
 
-    &[class*='right aligned']
-      justify-content flex-end
-
     &:not(.vertical)
       flex-direction row
 
@@ -39,6 +36,9 @@
 
         &.around
           justify-content space-around
+
+    > input
+      flex-shrink 0
 
   &.inline:not(.block):not(.flexy)
     display inline
@@ -94,6 +94,14 @@
 
   &[class*='left aligned']
     text-align left
+
+  &[class*='right aligned']
+
+    &:not(.flexy)
+      text-align right
+
+    &.flexy
+      justify-content flex-end
 
   &[class*='center aligned']
     text-align center

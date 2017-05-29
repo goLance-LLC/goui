@@ -1,12 +1,13 @@
 .gl.field
 .gl.form .field
   $background = #fff
+  $box-shadow = $field-box-shadow
 
   > input
     background $background
     border none
     border-radius 0
-    box-shadow inset -1px -1px $color-border, inset 1px 1px $color-border
+    box-shadow $box-shadow
     padding .8em 1em
     transition box-shadow $transition-duration
 
@@ -29,8 +30,8 @@
   &.iconed
     align-items center
     background $background
-    border $border
-    display flex
+    box-shadow $box-shadow
+    display inline-flex
 
     > .icon + input
       padding-left 0
@@ -42,17 +43,24 @@
 
     > input
       box-shadow none
+      background transparent
 
   &.short
 
     > input
-      max-width 4em
+      max-width 5em
       width 100%
 
   &.medium
+    max-width 10em
 
     > input
-      max-width 7em
+      width 100%
+
+  &.long
+    max-width 15em
+
+    > input
       width 100%
 
   &.clean
