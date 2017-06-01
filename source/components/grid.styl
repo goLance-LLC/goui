@@ -92,51 +92,63 @@ $border = 1px solid $color-border
 
       &[class*='one wide']
         flex-basis 'calc(100% / 12 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='two wide']
         flex-basis 'calc(100% / 6 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='three wide']
         flex-basis 'calc(25% - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='four wide']
         flex-basis 'calc(100% / 3 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='five wide']
         flex-basis 'calc(100% * 5 / 12 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='six wide']
         flex-basis 'calc(50% - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='seven wide']
         flex-basis 'calc(100% * 7 / 12 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='eight wide']
         flex-basis 'calc(100% * 8 / 12 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='nine wide']
         flex-basis 'calc(100% * 9 / 12 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='ten wide']
         flex-basis 'calc(100% * 10 / 12 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
       &[class*='eleven wide']
         flex-basis 'calc(100% * 11 / 12 - %s)' % ($padding * 2)
+        min-width @flex-basis
         width @flex-basis
 
     &[class*='twelve wide']
     &[class*='full wide']
       flex-basis 'calc(100% - %s)' % ($padding * 2)
+      min-width @flex-basis
       width @flex-basis
 
   fullWidthDefinitions($width)
@@ -146,18 +158,21 @@ $border = 1px solid $color-border
 
         > .column:not(.wide)
           flex-basis 50%
+          min-width @flex-basis
           width @flex-basis
 
       &[class*='three column']
 
         > .column:not(.wide)
           flex-basis calc(100% / 3)
+          min-width @flex-basis
           width @flex-basis
 
       &[class*='four column']
 
         > .column:not(.wide)
           flex-basis 25%
+          min-width @flex-basis
           width @flex-basis
 
 
@@ -185,13 +200,15 @@ $border = 1px solid $color-border
 
         > .column
           flex-basis auto
+          min-width 100%
           width 100%
 
         &.double
 
           > .column
             flex-basis 50%
-            width 50%
+            min-width @flex-basis
+            width @flex-basis
 
         &.reversed
           flex-direction column-reverse
