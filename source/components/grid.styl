@@ -94,12 +94,12 @@ $border = 1px solid $color-border
     > .column
 
       &[class*='one wide']
-        flex-basis 'calc(100% / 12 - %s)' % ($padding * 2)
+        flex-basis 'calc(8.33% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
       &[class*='two wide']
-        flex-basis 'calc(100% / 6 - %s)' % ($padding * 2)
+        flex-basis 'calc(16.66% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
@@ -109,12 +109,12 @@ $border = 1px solid $color-border
         width @flex-basis
 
       &[class*='four wide']
-        flex-basis 'calc(100% / 3 - %s)' % ($padding * 2)
+        flex-basis 'calc(33.33% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
       &[class*='five wide']
-        flex-basis 'calc(100% * 5 / 12 - %s)' % ($padding * 2)
+        flex-basis 'calc(41.66% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
@@ -124,27 +124,27 @@ $border = 1px solid $color-border
         width @flex-basis
 
       &[class*='seven wide']
-        flex-basis 'calc(100% * 7 / 12 - %s)' % ($padding * 2)
+        flex-basis 'calc(58.33% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
       &[class*='eight wide']
-        flex-basis 'calc(100% * 8 / 12 - %s)' % ($padding * 2)
+        flex-basis 'calc(66.66% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
       &[class*='nine wide']
-        flex-basis 'calc(100% * 9 / 12 - %s)' % ($padding * 2)
+        flex-basis 'calc(75% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
       &[class*='ten wide']
-        flex-basis 'calc(100% * 10 / 12 - %s)' % ($padding * 2)
+        flex-basis 'calc(83.33% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
       &[class*='eleven wide']
-        flex-basis 'calc(100% * 11 / 12 - %s)' % ($padding * 2)
+        flex-basis 'calc(91.66% - %s)' % ($padding * 2)
         min-width @flex-basis
         width @flex-basis
 
@@ -167,7 +167,7 @@ $border = 1px solid $color-border
       &[class*='three column']
 
         > .column:not(.wide)
-          flex-basis calc(100% / 3)
+          flex-basis 33.33%
           min-width @flex-basis
           width @flex-basis
 
