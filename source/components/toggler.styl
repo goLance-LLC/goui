@@ -1,0 +1,65 @@
+.gl.toggler
+  $toggler-height = 1.5em
+  $thumb-offset = .1em
+  $label-color = $color-primary
+  $transition-duration = .3s
+
+  display inline-flex
+  position relative
+
+  > input[type='checkbox']
+    cursor pointer
+    height 100%
+    left 0
+    opacity 0
+    position absolute
+    top 0
+    width 100%
+
+    + label
+      align-items center
+      background #fff
+      border-radius 2em
+      box-shadow inset 0 0 1px hsla(#000, .25)
+      height $toggler-height
+      pointer-events none
+      transition background-color $transition-duration
+      width ($toggler-height * 2)
+
+      &::after
+        background #fff
+        border-radius 50%
+        box-shadow 0 1px 1px hsla(#000, .25)
+        content ''
+        height ($toggler-height + $thumb-offset)
+        left -($thumb-offset)
+        position absolute
+        top 'calc(50% - %s)' % (@height / 2)
+        transition left $transition-duration
+        width @height
+
+    &:checked
+    ^[0].active ^[1..-1]
+
+      + label
+        background $label-color
+
+    &:checked
+
+      + label
+
+        &::after
+          left $toggler-height + $thumb-offset
+
+  &.tiny
+    font-size .5em
+
+  &.small
+    font-size .75em
+
+  &.large
+    font-size 1.25em
+
+  &.big
+    font-size 1.5em
+
