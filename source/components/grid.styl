@@ -1,3 +1,5 @@
+@lost flexbox flex
+
 $padding = ($indent / 2)
 $border = 1px solid $color-border
 
@@ -275,3 +277,106 @@ $border = 1px solid $color-border
 
         &:not(:last-child)
           border-color $color-grey-lighter
+
+
+.gl.grid
+  lost-center 100%
+
+  $fractions = 1 'one',
+               2 'two',
+               3 'three',
+               4 'four',
+               5 'five',
+               6 'six',
+               7 'seven',
+               8 'eight',
+               9 'nine',
+               10 'ten',
+               11 'eleven',
+               12 'twelve'
+
+  for $fraction in $fractions
+
+    &[class*=\'{$fraction[1]} column\']
+
+      &:not(.waffle):not(.masonry)
+
+        > .column
+          lost-column 1/1 * $fraction[0]
+
+      &.waffle
+
+        > .column
+          lost-waffle 1/1 * $fraction[0]
+
+      &.masonry
+
+        > .column
+          lost-masonry-column 1/1 * $fraction[0]
+
+  > .column
+    padding $padding
+
+    &:not(.media)
+
+      for $fraction in $fractions
+
+        &[class*=\'{$fraction[1]} wide\']
+
+          ~/:not(.waffle):not(.masonry) ^[1..-1]
+            lost-column $fraction[0]/12
+
+          ~/.waffle ^[1..-1]
+            lost-waffle $fraction[0]/12
+
+          ~/.masonry ^[1..-1]
+            lost-masonry-column $fraction[0]/12
+
+    &.media
+
+      for $fraction in $fractions
+
+        &[class*=\'{$fraction[1]} wide other media\']
+
+          ~/:not(.waffle):not(.masonry) ^[1..-1]
+            lost-column $fraction[0]/12
+
+          ~/.waffle ^[1..-1]
+            lost-waffle $fraction[0]/12
+
+          ~/.masonry ^[1..-1]
+            lost-masonry-column $fraction[0]/12
+
+        for $size in $media-sizes
+
+          &[class*=\'{$fraction[1]} wide {$size[0]} media\']
+
+            @media(max-width $size[1])
+
+              ~/:not(.waffle):not(.masonry) ^[1..-1]
+                lost-column $fraction[0]/12
+
+              ~/.waffle ^[1..-1]
+                lost-waffle $fraction[0]/12
+
+              ~/.masonry ^[1..-1]
+                lost-masonry-column $fraction[0]/12
+
+  &.stackable
+
+    @media (max-width $media-medium)
+
+      &:not(.waffle):not(.masonry)
+
+        > .column
+          lost-column 1/1 !important
+
+      &.waffle
+
+        > .column
+          lost-waffle 1/1 !important
+
+      &.masonry
+
+        > .column
+          lost-masonry-column 1/1 !important
