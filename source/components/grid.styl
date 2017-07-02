@@ -299,7 +299,7 @@ $border = 1px solid $color-border
 
     &[class*=\'{$fraction[1]} column\']
 
-      &:not(.waffle):not(.masonry)
+      &:not(.waffle)
 
         > .column
           lost-column 1/1 * $fraction[0]
@@ -308,11 +308,6 @@ $border = 1px solid $color-border
 
         > .column
           lost-waffle 1/1 * $fraction[0]
-
-      &.masonry
-
-        > .column
-          lost-masonry-column 1/1 * $fraction[0]
 
   > .column
     padding $padding
@@ -323,14 +318,11 @@ $border = 1px solid $color-border
 
         &[class*=\'{$fraction[1]} wide\']
 
-          ~/:not(.waffle):not(.masonry) ^[1..-1]
+          ~/:not(.waffle) ^[1..-1]
             lost-column $fraction[0]/12
 
           ~/.waffle ^[1..-1]
             lost-waffle $fraction[0]/12
-
-          ~/.masonry ^[1..-1]
-            lost-masonry-column $fraction[0]/12
 
     &.media
 
@@ -338,14 +330,11 @@ $border = 1px solid $color-border
 
         &[class*=\'{$fraction[1]} wide other media\']
 
-          ~/:not(.waffle):not(.masonry) ^[1..-1]
+          ~/:not(.waffle) ^[1..-1]
             lost-column $fraction[0]/12
 
           ~/.waffle ^[1..-1]
             lost-waffle $fraction[0]/12
-
-          ~/.masonry ^[1..-1]
-            lost-masonry-column $fraction[0]/12
 
         for $size in $media-sizes
 
@@ -353,20 +342,17 @@ $border = 1px solid $color-border
 
             @media(max-width $size[1])
 
-              ~/:not(.waffle):not(.masonry) ^[1..-1]
+              ~/:not(.waffle) ^[1..-1]
                 lost-column $fraction[0]/12
 
               ~/.waffle ^[1..-1]
                 lost-waffle $fraction[0]/12
 
-              ~/.masonry ^[1..-1]
-                lost-masonry-column $fraction[0]/12
-
   &.stackable
 
     @media (max-width $media-medium)
 
-      &:not(.waffle):not(.masonry)
+      &:not(.waffle)
 
         > .column
           lost-column 1/1 !important
@@ -375,8 +361,3 @@ $border = 1px solid $color-border
 
         > .column
           lost-waffle 1/1 !important
-
-      &.masonry
-
-        > .column
-          lost-masonry-column 1/1 !important
