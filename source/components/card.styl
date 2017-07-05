@@ -1,4 +1,5 @@
 $card-indent = $indent / 2
+$card-width = 290px
 
 .gl.card
 .gl.cards > .card
@@ -9,6 +10,7 @@ $card-indent = $indent / 2
   justify-content center
   margin $card-indent
   padding $card-indent
+  width $card-width
 
   > header
     align-items center
@@ -41,16 +43,21 @@ $card-indent = $indent / 2
       font-weight 700
 
 .gl.cards
-  align-items flex-start
-  display flex
-  flex-wrap wrap
+  column-gap $card-indent
+  column-count auto
+  column-width $card-width
 
-  &.three
+  > .card
+    margin-bottom ($card-indent * 2)
+    margin-left 0
+    margin-right 0
+    margin-top 0
+
+  &.centered
 
     > .card
-      flex-basis 'calc(100% / 3 - (%s * 2))' % $card-indent
+      margin-left auto
+      margin-right auto
 
-    @media(max-width: $media-small)
-
-      > .card
-        flex-basis 100%
+  &.three
+    max-width 'calc(%s + %s)' % (($card-width * 3) ($card-indent * 6))

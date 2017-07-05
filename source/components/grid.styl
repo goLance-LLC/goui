@@ -282,32 +282,32 @@ $border = 1px solid $color-border
 .gl.grid
   lost-center 100%
 
-  $fractions = 1 'one',
-               2 'two',
-               3 'three',
-               4 'four',
-               5 'five',
-               6 'six',
-               7 'seven',
-               8 'eight',
-               9 'nine',
-               10 'ten',
-               11 'eleven',
-               12 'twelve'
+  $fractions = 'one' 1,
+               'two' 2,
+               'three' 3,
+               'four' 4,
+               'five' 5,
+               'six' 6,
+               'seven' 7,
+               'eight' 8,
+               'nine' 9,
+               'ten' 10,
+               'eleven' 11,
+               'twelve' 12
 
   for $fraction in $fractions
 
-    &[class*=\'{$fraction[1]} column\']
+    &[class*=\'{$fraction[0]} column\']
 
       &:not(.waffle)
 
         > .column
-          lost-column 1/1 * $fraction[0]
+          lost-column 1/1 * $fraction[1]
 
       &.waffle
 
         > .column
-          lost-waffle 1/1 * $fraction[0]
+          lost-waffle 1/1 * $fraction[1]
 
   > .column
     padding $padding
@@ -316,37 +316,39 @@ $border = 1px solid $color-border
 
       for $fraction in $fractions
 
-        &[class*=\'{$fraction[1]} wide\']
+        &[class*=\'{$fraction[0]} wide\']
 
           ~/:not(.waffle) ^[1..-1]
-            lost-column $fraction[0]/12
+            lost-column $fraction[1]/12
 
           ~/.waffle ^[1..-1]
-            lost-waffle $fraction[0]/12
+            lost-waffle $fraction[1]/12
 
     &.media
 
       for $fraction in $fractions
 
-        &[class*=\'{$fraction[1]} wide other media\']
+        &[class*=\'{$fraction[0]} wide other media\']
 
           ~/:not(.waffle) ^[1..-1]
-            lost-column $fraction[0]/12
+            lost-column $fraction[1]/12
 
           ~/.waffle ^[1..-1]
-            lost-waffle $fraction[0]/12
+            lost-waffle $fraction[1]/12
+
+      for $fraction in $fractions
 
         for $size in $media-sizes
 
-          &[class*=\'{$fraction[1]} wide {$size[0]} media\']
+          &[class*=\'{$fraction[0]} wide {$size[0]} media\']
 
             @media(max-width $size[1])
 
               ~/:not(.waffle) ^[1..-1]
-                lost-column $fraction[0]/12
+                lost-column $fraction[1]/12
 
               ~/.waffle ^[1..-1]
-                lost-waffle $fraction[0]/12
+                lost-waffle $fraction[1]/12
 
   &.stackable
 
