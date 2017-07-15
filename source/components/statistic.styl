@@ -1,0 +1,28 @@
+.gl.statistic
+.gl.statistics > .statistic
+  text-transform uppercase
+  font-size 1.5em
+
+  > .label
+    font-size .5em
+
+  > .value
+    font-weight $font-semibold
+
+  &.small
+  /.gl.small.statistics > .statistic
+    font-size 1.25em
+
+  &.tiny
+  /.gl.tiny.statistics > .statistic
+    font-size 1.25em
+
+.gl.statistics
+  display flex
+
+  &:not(.vertical)
+
+    > .statistic
+
+      &:not(:last-child)
+        margin-right ($indent / 2)

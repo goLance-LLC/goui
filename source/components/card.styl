@@ -12,10 +12,12 @@ $card-width = 290px
   padding $card-indent
   width $card-width
 
+  > *
+    width 100%
+
   > header
     align-items center
     display flex
-    width 100%
 
     > .actions
       align-items center
@@ -42,22 +44,35 @@ $card-width = 290px
     > .title
       font-weight 700
 
+  > footer
+    align-items center
+    display flex
+    justify-content center
+
+    > :first-child
+      margin-right auto
+
+    > :last-child
+      margin-left auto
+
 .gl.cards
-  column-gap $card-indent
+  column-gap ($card-indent * 2)
   column-count auto
   column-width $card-width
 
   > .card
+    display inline-flex
     margin-bottom ($card-indent * 2)
     margin-left 0
     margin-right 0
     margin-top 0
 
-  &.centered
-
-    > .card
-      margin-left auto
-      margin-right auto
-
   &.three
     max-width 'calc(%s + %s)' % (($card-width * 3) ($card-indent * 6))
+
+  &[class*='center aligned']
+    text-align center
+
+  &.centered
+    margin-left auto
+    margin-right auto
