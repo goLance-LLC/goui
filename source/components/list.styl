@@ -62,20 +62,40 @@
           margin-right $indent
           width @height
 
-  &.categories
+  &.category
+
+    .item
+      align-items center
+      font-size .9em
+
+      > a
+        align-items center
+        color $color-text
+        display flex
+        padding-bottom ($indent / 4)
+        padding-top @padding-bottom
+
+        > .gl.icon
+          margin-right ($indent / 2)
+
+        &:hover
+          color $color-primary
+
+      > .subcategory.list
+        margin-left $indent
+
+      &.selected
+
+        > a
+          color $color-primary
+          font-weight $font-bold
+
+  &.active
 
     > .item
-      align-items center
-      color #fff
-      display flex
-      padding $indent
-      text-transform uppercase
 
-      > .gl.icon
-        margin-right ($indent / 2)
-
-      &:hover
-        background hsla(#000, .1)
+      > a
+        color $color-grey-darker
 
 
 
