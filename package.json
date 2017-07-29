@@ -1,6 +1,6 @@
 {
   "name": "goui",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A goLance UI library",
   "main": "source/index.styl",
   "repository": "https://github.com/goLance-LLC/goui",
