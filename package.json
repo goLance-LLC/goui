@@ -21,6 +21,6 @@
     "compile": "npm run compile:stylus && npm run compile:postcss",
     "minify": "cleancss --source-map -o build/goui.min.css build/goui.css",
     "build": "npm run compile && npm run minify",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   }
 }
