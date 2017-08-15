@@ -1,3 +1,6 @@
+$main-menu-height = 60px
+$logo-width = 130px
+
 .gl.menu
 
   &.clean
@@ -30,3 +33,43 @@
 
   &.responsive
     flex-wrap wrap
+
+  &.main
+    align-items stretch
+    display flex
+    height $main-menu-height
+
+    > .side
+      align-items stretch
+      display flex
+      flex-shrink 0
+      justify-content center
+
+      > .item
+        align-items center
+        color #fff
+        display flex
+        font-weight $font-bold
+        justify-content center
+        padding 1.2em 1.8em
+        text-transform uppercase
+
+        &:hover
+        &:active
+          background hsla(#000, .1)
+
+        &.active
+          background hsla(#000, .2)
+
+        &.logo
+          padding-bottom 0
+          padding-top 0
+
+          > *
+            width $logo-width
+
+      &.left
+        margin-right auto
+
+      &.right
+        margin-left auto
