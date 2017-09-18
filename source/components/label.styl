@@ -2,6 +2,7 @@
   align-items center
   background $color-grey-lightest
   border-radius 3px
+  color $color-text
   display inline-flex
   font-size .8rem
   font-weight 700
@@ -15,7 +16,49 @@
       margin-right ($indent / 2)
 
   &.small
-    font-size .65em
+    font-size .85em
 
   &.tiny
-    font-size .5em
+    font-size .7em
+
+  &.tag
+    border-radius 0 .28571429rem .28571429rem 0
+    cursor pointer
+    margin-left 1em
+    padding-left 1.5em
+    padding-right @padding-left
+    position relative
+    transition none
+
+    &::before
+    &::after
+      content ''
+      position absolute
+      top 50%
+
+    &::before
+      background-color inherit
+      background-image none
+      height 1.75em
+      right 100%
+      transform translateY(-50%) translateX(50%) rotate(-45deg)
+      transition none
+      width @height
+
+    &::after
+      background-color #fff
+      border-radius 50%
+      box-shadow 0 -.5px 0px 0 hsla(#000, .3)
+      height .5em
+      left -.25em
+      margin-top -.25em
+      width .5em
+
+    &:hover
+      background-color $color-grey-lighter
+      border-color @background-color
+      background-image none
+      color hsla(#000, .8)
+
+      &::before
+        color hsla(#000, .8)
