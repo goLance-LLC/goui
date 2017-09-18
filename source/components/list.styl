@@ -1,6 +1,7 @@
 .gl.list
   display flex
   flex-direction column
+  list-style-type none
   margin 0
   padding 0
 
@@ -111,3 +112,12 @@
 
       > .item
         color $color-grey
+
+  &.divided
+
+    > .item
+
+      + .item
+        border-top 1px solid $color-border
+        margin-top ($indent / 2)
+        padding-top ($indent / 2)
